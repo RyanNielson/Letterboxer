@@ -12,7 +12,7 @@ namespace Letterboxer
         private int targetHeight = 720;
 
         [SerializeField]
-        private CameraType type = CameraType.ScaleToFit;
+        private CameraType type = CameraType.MaintainAspectRatio;
 
         private new Camera camera;
         private Camera Camera
@@ -37,9 +37,9 @@ namespace Letterboxer
 
         private void UpdateLetterbox()
         {
-            if (type == CameraType.ScaleToFit)
+            if (type == CameraType.MaintainAspectRatio)
             {
-                HandleScaleToFit();
+                HandleMaintainAspectRatio();
             }
             else
             {
@@ -47,7 +47,7 @@ namespace Letterboxer
             }
         }
 
-        private void HandleScaleToFit()
+        private void HandleMaintainAspectRatio()
         {
             float targetAspect = targetWidth / (float)targetHeight;
             float windowAspect = currentScreenWidth / (float)currentScreenHeight;

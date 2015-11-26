@@ -2,7 +2,7 @@
 {
     public enum CameraType
     {
-        ScaleToFit = 0,
+        MaintainAspectRatio = 0,
         BestPixelPerfectFit = 1
     }
 }
